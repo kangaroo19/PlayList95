@@ -1,12 +1,7 @@
 import { useState } from "react";
-import {
-  AppBar,
-  Button,
-  MenuList,
-  MenuListItem,
-  Separator,
-  Toolbar,
-} from "react95";
+import { AppBar, Button, MenuList, MenuListItem, Separator, Toolbar } from "react95";
+import Image from "next/image";
+import nekiImg from "../../../../asset/images/네키.png";
 
 export default function BottomBar() {
   const [open, setOpen] = useState(false);
@@ -16,10 +11,7 @@ export default function BottomBar() {
   return (
     <AppBar style={AppBarStyle}>
       <Toolbar style={{ justifyContent: "space-between" }}>
-        <Button onClick={onClickStartBtn}>
-          {/* <img src={logoIMG} alt="react95 logo" style={{ height: "20px", marginRight: 4 }} /> */}
-          Start
-        </Button>
+        <Button onClick={onClickStartBtn}>Start</Button>
         {open && (
           <MenuList
             style={{
@@ -30,8 +22,8 @@ export default function BottomBar() {
             onClick={() => setOpen(false)}
           >
             <MenuListItem>
-              <span role="img" aria-label="👨‍💻">
-                👨‍💻
+              <span>
+                <Image src={nekiImg} width={25} height={25} alt="네키" />
               </span>
               Github
             </MenuListItem>
@@ -59,3 +51,7 @@ const AppBarStyle = {
   bottom: "0",
   top: "auto",
 };
+
+// react95의 버튼태그 사용시 에러났음
+// styled-component에서 에러남
+// 이 에러는 결국 버전 다운그레이드 함으러써 해결
