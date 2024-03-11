@@ -7,13 +7,16 @@ import original from "react95/dist/themes/original";
 // original Windows95 font (optionally)
 import Layout from "@/components/layout/Layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Icon from "@/components/backgroundIcon/Icon";
 const queryClient = new QueryClient();
 export default function Home() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={original}>
-          <Layout>dddd</Layout>
+          <Layout>
+            <Icon />
+          </Layout>
         </ThemeProvider>
       </QueryClientProvider>
     </>

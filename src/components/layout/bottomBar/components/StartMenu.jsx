@@ -1,8 +1,8 @@
 import Image from "next/image";
-import nekiImg from "../../../../../asset/images/네키.png";
+import nekiImg from "@/asset/images/네키.png";
 import { MenuList, MenuListItem, Separator } from "react95";
 
-export default function StartBtn() {
+export default function StartBtn({ onClickStartBtn }) {
   return (
     <MenuList
       style={{
@@ -10,7 +10,7 @@ export default function StartBtn() {
         left: "0",
         bottom: "100%",
       }}
-      onClick={() => setOpen(false)}
+      onClick={onClickStartBtn}
     >
       <MenuListItem>
         <span>
